@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<!-- A simple model of the racecar for rviz -->
+
+<robot name="ucar_mini">
+
+
+  <material name="blue">
+    <color rgba="0.3 0.57 1. 1."/>
+  </material>
+
+  <link name="base_link">
+    <visual>
+    <origin xyz=" 0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.342 0.256 0.06" />
+        </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <link name="laser_frame">
+    <visual>
+    <origin xyz=" 0 0 0" rpy="0 0 0" />
+        <geometry>
+          <cylinder length="0.05" radius="0.0345"/>
+        </geometry>
+    <material name="black">
+     <color rgba="0 0 0 1"/>
+    </material>
+    </visual>
+  </link>
+
+    <link name="camera_frame">
+    <visual>
+    <origin xyz=" 0 0 0" rpy="0 0 0" />
+        <geometry>
+             <box size="0.02 0.03 0.045" />
+        </geometry>
+    <material name="black">
+     <color rgba="0 0 0 1"/>
+    </material>
+    </visual>
+  </link>
+
+    <link name="imu_frame">
+    <visual>
+    <origin xyz=" 0 0 0" rpy="0 0 0" />
+        <geometry>
+          <cylinder length="0.01" radius="0.01"/>
+        </geometry>
+    <material name="black">
+     <color rgba="0 0 0 1"/>
+    </material>
+    </visual>
+  </link>
+
+
+
+<joint name="laser_joint" type="fixed">
+        <origin xyz="-0.11 0.0 0.165" rpy="0 0 -0.07" />
+        <parent link="base_link"/>
+        <child link="laser_frame"/>
+</joint>
+  
+
+<joint name="camera_joint" type="fixed">
+        <origin xyz="0.15 0 0.15" rpy="-2.007126944 0 -1.570795" />
+        <parent link="base_link"/>
+        <child link="camera_frame"/>
+</joint>
+
+
+<joint name="imu_joint" type="fixed">
+        <origin xyz="0.05 -0.05 0.05" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="imu_frame"/>
+</joint>
+
+
+
+</robot>
