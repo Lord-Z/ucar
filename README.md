@@ -6,6 +6,8 @@ put this package into ucar_ws/src
 
 recode base_driver.launch
 
-just add  <include file="$(find ucar_description)/launch/model.launch.xml" /> is fine
+![2021-07-27 17-53-59 的屏幕截图](https://user-images.githubusercontent.com/55304666/127136658-5ee62438-2dc6-4a6f-b47e-beafc0b66b49.png)
 
-then when you open rviz ,you can see ucar's model
+is fine！
+
+then open rviz ,you can see ucar's model
